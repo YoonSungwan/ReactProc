@@ -3,11 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import './styles/style.css';
 import Greetings from "./components/Greetings";
-import VdsMenu from "./pages/VdsMenu";
+import VdsMenu, { refCtrl } from "./pages/VdsMenu";
+import menuDom from './pages/VmsMenu';
 
 function App() {
   const onclick = (name : string) => {
       console.log(`${name} says Hello!`);
+      refCtrl();
   };
 
     function setFrameView(viewId: string, name: string) {
@@ -45,7 +47,8 @@ function App() {
                       </ul>
                   </div>
               </header>
-          <Greetings onClick={onclick} name="Hello"/>
+            { menuDom() }
+          <Greetings onClick={onclick} name="Greetings compnent"/>
           <VdsMenu val="test" id="testId"></VdsMenu>
       </div>
   );

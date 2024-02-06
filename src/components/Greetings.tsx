@@ -1,4 +1,5 @@
 import React from "react";
+import { InputSample } from "./InputSample";
 
 type GreetingsProps = {
     name: string;
@@ -11,11 +12,12 @@ function Greetings({ name, mark, optional, onClick }: GreetingsProps) {
     const handleClick = () => onClick(name);
     return (
         <div>
-            Hello, {name} {mark}
+            this function is {name} {mark}
             {optional && <p>{optional}</p>}
             <div>
-                <button onClick={handleClick}>Click Me</button>
+                <button onClick={handleClick}>{name}</button>
             </div>
+            <InputSample></InputSample>
         </div>
     );
 }
